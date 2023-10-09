@@ -1,0 +1,21 @@
+{
+  "name": "nodeserver-boilerplate",
+  "version": "1.0.0",
+  "description": "This is a boilerplate for NodeJs and express , along with ejs for simple library test and stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.1",
+    "sequelize": "^6.33.0"
+  }
+}
