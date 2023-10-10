@@ -14,6 +14,13 @@ const client = new Client({ intents: [
   GatewayIntentBits.GuildMessages,
   GatewayIntentBits.MessageContent,] });
 
+const chatcommands = [
+  {cmd: "ping", desc: "Reply with Pong .."},
+  {cmd: "asd", desc: "Reply with fjk"},
+  {cmd: "listzomboidmem", desc: "List of Zomboid role on this server"},
+  {ImportantNote: `use / prefix to use command - /help`},
+]
+
 setupDiscord();
 
 client.on('ready', () => {
@@ -37,6 +44,7 @@ client.on('messageCreate' , async (message) => {
     // Now, you can handle your commands here.
     const messageFixed = message.content.toString().toLowerCase()
     switch (messageFixed) {
+
       case 'ping':
         message.reply('Pong ..');
         break;
@@ -69,6 +77,11 @@ client.on('messageCreate' , async (message) => {
         } catch (error) {
           console.error(error);
         }
+        break;
+
+      case 'help':
+        const formattedReply = JSON.stringify(chatcommands, null, 2);
+        message.reply(`Here are the available direct chat commands:\n\`\`\`\n${formattedReply}\n\`\`\``);
         break;
 
       default:
